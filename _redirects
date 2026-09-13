@@ -1,0 +1,10 @@
+/shop                 /shop.html                 200
+/product              /product.html              200
+/why-okio             /why-okio.html             200
+/about                /about.html                200
+/cart                 /cart.html                 200
+/checkout             /checkout.html             200
+/faq                  /faq.html                  200
+/contact              /contact.html              200
+/order-confirmation   /order-confirmation.html   200
+/*                    /404.html                  404

@@ -1,0 +1,7 @@
+# OKIO Beverages Robots.txt
+User-agent: *
+Allow: /
+Disallow: /checkout.html
+Disallow: /order-confirmation.html
+
+Sitemap: https://drinkokio.com/sitemap.xml

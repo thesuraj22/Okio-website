@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKIO Product Detail | Modern Functional Beverage</title>
+    <meta name="description" content="Detailed formulation, clean caffeine profile, nutritional values, and pack options for OKIO functional beverages.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Minimalist Loader -->
+    <div class="okio-loader" id="okio-loader">
+        <div class="loader-logo">okio</div>
+        <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="main-header scrolled" id="main-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo" aria-label="OKIO Home">okio</a>
+            
+            <nav class="desktop-nav" aria-label="Primary Navigation">
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="why-okio.html" class="nav-link">Why OKIO</a>
+                <a href="about.html" class="nav-link">Our Story</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="header-icon-btn search-trigger" id="search-trigger" aria-label="Search Flavors & Ingredients">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button class="cart-trigger" id="cart-trigger" aria-label="Open Cart Drawer">
+                    <span>Stash</span>
+                    <span class="cart-icon-wrapper">
+                        <svg class="cart-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-count-badge">0</span>
+                    </span>
+                </button>
+                <a href="shop.html" class="btn btn-primary header-cta-btn">SHOP OKIO</a>
+                <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                    <span class="menu-bar bar-top"></span>
+                    <span class="menu-bar bar-bottom"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav">
+        <nav class="mobile-nav-links">
+            <a href="shop.html" class="mob-link">Shop All</a>
+            <a href="why-okio.html" class="mob-link">Why OKIO</a>
+            <a href="about.html" class="mob-link">Our Story</a>
+            <a href="faq.html" class="mob-link">FAQ</a>
+            <a href="contact.html" class="mob-link">Contact</a>
+        </nav>
+        <div class="mobile-nav-footer">
+            <p>A better way to refresh.</p>
+            <div class="mob-socials">
+                <a href="#" target="_blank" rel="noopener">Instagram</a>
+                <a href="#" target="_blank" rel="noopener">Twitter / X</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main PDP Container -->
+    <main id="pdp-container">
+        <section class="pdp-main-section">
+            <div class="container pdp-layout-grid">
+                
+                <!-- Left: Multi-Angle Gallery & Lightbox Trigger -->
+                <div class="pdp-gallery">
+                    <div class="pdp-main-image-wrap" id="pdp-main-image-wrap" title="Click for fullscreen view">
+                        <img id="pdp-main-image" src="assets/okio_can_yerba.jpg" alt="OKIO Can Hero">
+                        <span class="pdp-zoom-badge">🔍 Click to expand</span>
+                    </div>
+                    <div class="pdp-thumbnails" id="pdp-thumbs-container">
+                        <!-- Thumbnails injected via main.js -->
+                    </div>
+                </div>
+
+                <!-- Right: Product Information & Purchase System -->
+                <div class="pdp-info">
+                    <span class="pdp-flavor-tag" id="pdp-flavor-tag">Yerba Mate + Citrus</span>
+                    <h1 class="pdp-title" id="pdp-title">OKIO Yerba Mate + Citrus</h1>
+                    
+                    <div class="pdp-rating-row">
+                        <span class="pdp-stars">★★★★★</span>
+                        <span class="pdp-review-count">4.9 • 340+ verified drinkers</span>
+                    </div>
+
+                    <div class="pdp-price-row">
+                        <span class="pdp-price-current" id="pdp-price-current">₹1,299</span>
+                        <span class="pdp-price-compare" id="pdp-price-compare" style="display: none;">₹1,440</span>
+                        <span class="pdp-save-badge" id="pdp-save-badge" style="display: none;">Save ₹141</span>
+                    </div>
+
+                    <p class="pdp-short-desc" id="pdp-short-desc">
+                        Clean green tea caffeine coupled with high-altitude yerba mate and cold-pressed lime. Sustained elevation with zero crash.
+                    </p>
+
+                    <!-- Flavor Switcher -->
+                    <div class="pdp-flavor-switcher">
+                        <span class="pdp-field-label">Switch Flavor</span>
+                        <div class="pdp-flavor-options" id="pdp-flavor-options">
+                            <!-- Flavor buttons injected via main.js -->
+                        </div>
+                    </div>
+
+                    <!-- Pack Sizes Selection -->
+                    <div class="pdp-pack-selector">
+                        <span class="pdp-field-label">Select Pack Size</span>
+                        <div class="pdp-pack-grid" id="pdp-pack-grid">
+                            <!-- Pack options injected via main.js -->
+                        </div>
+                    </div>
+
+                    <!-- Quantity & Primary Purchase CTAs -->
+                    <div class="pdp-action-group">
+                        <div class="pdp-qty-stepper">
+                            <button class="pdp-qty-btn" id="pdp-qty-minus" aria-label="Decrease quantity">−</button>
+                            <span class="pdp-qty-val" id="pdp-qty-val">1</span>
+                            <button class="pdp-qty-btn" id="pdp-qty-plus" aria-label="Increase quantity">+</button>
+                        </div>
+                        <button class="btn btn-secondary pdp-btn-add" id="pdp-add-cart-btn">ADD TO STASH</button>
+                        <button class="btn btn-primary pdp-btn-buynow" id="pdp-buy-now-btn">BUY NOW</button>
+                    </div>
+
+                    <!-- Trust Signals -->
+                    <div class="pdp-trust-row">
+                        <div class="pdp-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            <span>100% Non-Carbonated</span>
+                        </div>
+                        <div class="pdp-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                            <span>Free Express Delivery &gt;₹999</span>
+                        </div>
+                        <div class="pdp-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                            <span>Dispatches within 24h</span>
+                        </div>
+                    </div>
+
+                    <!-- Accordions: Nutrition, Ingredients, Shipping & FAQs -->
+                    <div class="pdp-accordions">
+                        <!-- Accordion 1: Ingredients -->
+                        <div class="pdp-accordion-item active">
+                            <button class="pdp-accordion-btn">
+                                <span>Full Ingredients Matrix</span>
+                                <span class="pdp-accordion-icon">+</span>
+                            </button>
+                            <div class="pdp-accordion-content">
+                                <p id="pdp-ingredients-text">
+                                    Purified Water, Organic Yerba Mate Leaf Extract, Cold-Pressed Lime Juice Concentrate, Natural Green Tea Extract (Standardized to 75mg Clean Caffeine), L-Theanine, Himalayan Pink Salt, Citric Acid, Natural Flavors, Stevia Leaf Extract.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 2: Nutrition Facts Table -->
+                        <div class="pdp-accordion-item">
+                            <button class="pdp-accordion-btn">
+                                <span>Nutritional Facts (Per 330ml Can)</span>
+                                <span class="pdp-accordion-icon">+</span>
+                            </button>
+                            <div class="pdp-accordion-content">
+                                <table class="nutrition-table">
+                                    <tbody id="pdp-nutrition-body">
+                                        <!-- Populated via script -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 3: Shipping Details -->
+                        <div class="pdp-accordion-item">
+                            <button class="pdp-accordion-btn">
+                                <span>Shipping & Returns in India</span>
+                                <span class="pdp-accordion-icon">+</span>
+                            </button>
+                            <div class="pdp-accordion-content">
+                                <p>
+                                    All OKIO stashes are dispatched from our temperature-controlled centers in Bengaluru and Mumbai. Metro deliveries arrive in 2–3 business days. Free shipping on all orders over ₹999.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky Mobile Purchase Bar (Section 24) -->
+    <div class="sticky-mobile-bar" id="sticky-mobile-bar">
+        <div class="sticky-bar-left">
+            <span class="sticky-bar-title">OKIO Selected</span>
+            <span class="sticky-bar-price" id="sticky-pdp-price">₹1,299</span>
+        </div>
+        <button class="btn btn-primary sticky-bar-cta" id="sticky-mobile-cta">BUY NOW</button>
+    </div>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div class="lightbox-modal" id="pdp-lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">✕</button>
+        <img src="" alt="Fullscreen OKIO Product View" class="lightbox-img" id="lightbox-img">
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">okio</a>
+                    <p>A modern functional beverage crafted in India. Built for cognitive clarity, clean energy, and everyday ritual.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Shop</h5>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="product.html?id=yerba-mate-citrus">Yerba Mate + Citrus</a></li>
+                        <li><a href="product.html?id=hibiscus-yuzu-berry">Hibiscus + Yuzu</a></li>
+                        <li><a href="product.html?id=ginger-white-peach">Ginger + Peach</a></li>
+                        <li><a href="product.html?id=variety-pack">Discovery Stash</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Brand</h5>
+                    <ul class="footer-links">
+                        <li><a href="why-okio.html">Why OKIO</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">Shipping Policy</a></li>
+                        <li><a href="faq.html">Returns & Refunds</a></li>
+                        <li><a href="faq.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>STAY IN THE LOOP.</h5>
+                    <p>New drops, new flavors, and everything OKIO.</p>
+                    <form class="newsletter-form" id="footer-newsletter-form">
+                        <input type="email" placeholder="Enter your email..." required>
+                        <button type="submit" class="btn btn-primary" style="padding: 10px;">JOIN OKIO</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 OKIO Beverages India Private Limited. All rights reserved.</p>
+                <p>Designed for focus & flow.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/okio-data.js"></script>
+    <script src="js/okio-store.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "OKIO Functional Beverage",
+  "short_name": "OKIO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070707",
+  "theme_color": "#070707",
+  "description": "A modern functional beverage built for people who want more from what they drink.",
+  "icons": [
+    {
+      "src": "assets/okio_can_yerba.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "assets/okio_variety_pack.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

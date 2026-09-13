@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop OKIO | Premium Functional Beverage Stash</title>
+    <meta name="description" content="Explore the full OKIO functional beverage lineup. Yerba mate, hibiscus yuzu, ginger peach, and variety packs. Clean green tea caffeine and zero added sugar.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Minimalist Loader -->
+    <div class="okio-loader" id="okio-loader">
+        <div class="loader-logo">okio</div>
+        <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="main-header scrolled" id="main-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo" aria-label="OKIO Home">okio</a>
+            
+            <nav class="desktop-nav" aria-label="Primary Navigation">
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="why-okio.html" class="nav-link">Why OKIO</a>
+                <a href="about.html" class="nav-link">Our Story</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="header-icon-btn search-trigger" id="search-trigger" aria-label="Search Flavors & Ingredients">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button class="cart-trigger" id="cart-trigger" aria-label="Open Cart Drawer">
+                    <span>Stash</span>
+                    <span class="cart-icon-wrapper">
+                        <svg class="cart-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-count-badge">0</span>
+                    </span>
+                </button>
+                <a href="shop.html" class="btn btn-primary header-cta-btn">SHOP OKIO</a>
+                <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                    <span class="menu-bar bar-top"></span>
+                    <span class="menu-bar bar-bottom"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav">
+        <nav class="mobile-nav-links">
+            <a href="shop.html" class="mob-link active">Shop All</a>
+            <a href="why-okio.html" class="mob-link">Why OKIO</a>
+            <a href="about.html" class="mob-link">Our Story</a>
+            <a href="faq.html" class="mob-link">FAQ</a>
+            <a href="contact.html" class="mob-link">Contact</a>
+        </nav>
+        <div class="mobile-nav-footer">
+            <p>A better way to refresh.</p>
+            <div class="mob-socials">
+                <a href="#" target="_blank" rel="noopener">Instagram</a>
+                <a href="#" target="_blank" rel="noopener">Twitter / X</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Shop Hero Banner -->
+        <section class="page-shop-hero">
+            <div class="container">
+                <span class="section-tag accent">Catalog & Stash</span>
+                <h1 class="section-title">SHOP OKIO</h1>
+                <p style="color: var(--text-muted); font-size: 1.15rem; margin-top: 8px;">Choose your flavor. Build your stash.</p>
+
+                <!-- Toolbar: Filter Pills & Sorting -->
+                <div class="shop-toolbar">
+                    <div class="filter-pills-group" id="filter-group">
+                        <button class="filter-pill active" data-filter="all">All Products</button>
+                        <button class="filter-pill" data-filter="best-sellers">Best Sellers</button>
+                        <button class="filter-pill" data-filter="bundles">Bundles & Stashes</button>
+                        <button class="filter-pill" data-filter="single-units">Single Units</button>
+                    </div>
+
+                    <div class="sort-select-wrapper">
+                        <label for="shop-sort">Sort by:</label>
+                        <select id="shop-sort" class="sort-select">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Top Rated</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid Section -->
+        <section class="shop-catalog-section">
+            <div class="container">
+                <div class="product-grid" id="catalog-grid">
+                    <!-- Populated dynamically via script below -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">okio</a>
+                    <p>A modern functional beverage crafted in India. Built for cognitive clarity, clean energy, and everyday ritual.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Shop</h5>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="product.html?id=yerba-mate-citrus">Yerba Mate + Citrus</a></li>
+                        <li><a href="product.html?id=hibiscus-yuzu-berry">Hibiscus + Yuzu</a></li>
+                        <li><a href="product.html?id=ginger-white-peach">Ginger + Peach</a></li>
+                        <li><a href="product.html?id=variety-pack">Discovery Stash</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Brand</h5>
+                    <ul class="footer-links">
+                        <li><a href="why-okio.html">Why OKIO</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">Shipping Policy</a></li>
+                        <li><a href="faq.html">Returns & Refunds</a></li>
+                        <li><a href="faq.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>STAY IN THE LOOP.</h5>
+                    <p>New drops, new flavors, and everything OKIO.</p>
+                    <form class="newsletter-form" id="footer-newsletter-form">
+                        <input type="email" placeholder="Enter your email..." required>
+                        <button type="submit" class="btn btn-primary" style="padding: 10px;">JOIN OKIO</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 OKIO Beverages India Private Limited. All rights reserved.</p>
+                <p>Designed for focus & flow.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/okio-data.js"></script>
+    <script src="js/okio-store.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Shop Catalog Filter & Sort Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let activeFilter = 'all';
+            let activeSort = 'featured';
+
+            function renderCatalog() {
+                const grid = document.getElementById('catalog-grid');
+                if (!grid) return;
+
+                let items = [...OKIO_DATA.products];
+
+                // Filter logic
+                if (activeFilter === 'best-sellers') {
+                    items = items.filter(p => p.badge === 'Best Seller' || p.badge === 'Staff Pick');
+                } else if (activeFilter === 'bundles') {
+                    items = items.filter(p => p.category === 'bundles');
+                } else if (activeFilter === 'single-units') {
+                    items = items.filter(p => p.category === 'single-units');
+                }
+
+                // Sort logic
+                if (activeSort === 'price-low') {
+                    items.sort((a, b) => a.packSizes[0].price - b.packSizes[0].price);
+                } else if (activeSort === 'price-high') {
+                    items.sort((a, b) => b.packSizes[0].price - a.packSizes[0].price);
+                } else if (activeSort === 'rating') {
+                    items.sort((a, b) => b.rating - a.rating);
+                }
+
+                grid.innerHTML = items.map(p => `
+                    <div class="product-card" data-tilt>
+                        <span class="prod-badge-top" style="color: ${p.accentColor}">${p.badge}</span>
+                        <a href="product.html?id=${p.slug}" class="prod-img-box">
+                            <img src="${p.image}" alt="${p.name}" class="prod-img">
+                        </a>
+                        <span class="prod-flavor-label" style="color: ${p.accentColor}">${p.flavor}</span>
+                        <h3 class="prod-title">${p.name}</h3>
+                        <p class="prod-desc">${p.shortDesc}</p>
+                        <div class="prod-bottom-row">
+                            <div class="prod-price-box">
+                                <span class="prod-price-label">From</span>
+                                <span class="prod-price">₹${p.packSizes[0].price} <small>${p.packSizes[0].units > 1 ? '/ pack' : '/ can'}</small></span>
+                            </div>
+                            <div class="prod-card-actions">
+                                <button class="btn btn-secondary btn-card-add" data-quick-add="${p.id}">QUICK ADD</button>
+                                <button class="btn btn-primary btn-card-add" data-add-id="${p.id}" data-pack-id="${p.packSizes[1] ? p.packSizes[1].id : p.packSizes[0].id}" data-qty="1">
+                                    ADD ${p.packSizes[1] ? p.packSizes[1].label.toUpperCase() : 'PACK'}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Filter button listeners
+            document.querySelectorAll('#filter-group .filter-pill').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('#filter-group .filter-pill').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    activeFilter = btn.dataset.filter;
+                    renderCatalog();
+                });
+            });
+
+            // Sort dropdown listener
+            document.getElementById('shop-sort')?.addEventListener('change', (e) => {
+                activeSort = e.target.value;
+                renderCatalog();
+            });
+
+            renderCatalog();
+        });
+    </script>
+</body>
+</html>

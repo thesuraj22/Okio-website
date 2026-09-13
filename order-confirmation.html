@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed | YOU'RE OFFICIALLY OKIO</title>
+    <meta name="description" content="Your OKIO functional beverage order has been confirmed. Review order details and dispatch timeline.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: #070707;">
+
+    <!-- Minimalist Loader -->
+    <div class="okio-loader" id="okio-loader">
+        <div class="loader-logo">okio</div>
+        <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="checkout-header">
+        <a href="index.html" class="brand-logo" aria-label="Return to OKIO Home">okio</a>
+        <a href="shop.html" class="btn btn-secondary" style="padding: 8px 18px; font-size: 0.75rem;">CONTINUE SHOPPING</a>
+    </header>
+
+    <main class="confirmation-section">
+        <div class="container">
+            <div class="confirmation-card">
+                
+                <div class="confirm-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+
+                <h1>YOU'RE OFFICIALLY OKIO.</h1>
+                <div class="confirm-order-id" id="confirm-order-id">Order #OKIO-839210</div>
+                <p class="confirm-message">
+                    Your stash is booked and queued for precision packaging. A confirmation receipt with live tracking has been sent to your email and WhatsApp.
+                </p>
+
+                <!-- Delivery Tracker Timeline -->
+                <div class="delivery-tracker-block">
+                    <div class="tracker-title">Estimated Metro Delivery: 2–3 Business Days</div>
+                    <div class="tracker-steps">
+                        <div class="tracker-step active">
+                            <div class="step-dot"></div>
+                            <h6>Order Verified</h6>
+                            <p>Payment Authorized</p>
+                        </div>
+                        <div class="tracker-step active">
+                            <div class="step-dot"></div>
+                            <h6>Packaging Stash</h6>
+                            <p>Temperature Sealed</p>
+                        </div>
+                        <div class="tracker-step">
+                            <div class="step-dot"></div>
+                            <h6>Dispatched</h6>
+                            <p>Express Courier</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Receipt Details -->
+                <div style="background: var(--bg-elevated); border-radius: 14px; padding: 24px; text-align: left; margin-bottom: 36px; border: 1px solid var(--border-subtle);">
+                    <h4 style="font-size: 0.88rem; font-family: 'Outfit', sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-bottom: 16px;">
+                        Delivery Details
+                    </h4>
+                    <div style="font-size: 0.88rem; line-height: 1.6; color: var(--text-white);" id="confirm-address">
+                        <!-- Populated via script -->
+                    </div>
+                    
+                    <div style="border-top: 1px solid var(--border-subtle); margin: 20px 0; padding-top: 16px;">
+                        <h4 style="font-size: 0.88rem; font-family: 'Outfit', sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-bottom: 12px;">
+                            Items in this Drop
+                        </h4>
+                        <div id="confirm-items-list" style="display: flex; flex-direction: column; gap: 10px;">
+                            <!-- Populated via script -->
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; display: flex; justify-content: space-between; font-weight: 700; font-family: 'Outfit', sans-serif; font-size: 1.1rem;">
+                        <span>Total Paid</span>
+                        <span id="confirm-total-paid">₹0</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="shop.html" class="btn btn-primary" style="padding: 14px 32px;">EXPLORE MORE FLAVORS</a>
+                    <button class="btn btn-secondary" onclick="window.print();" style="padding: 14px 28px;">PRINT RECEIPT</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/okio-data.js"></script>
+    <script src="js/okio-store.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Confirmation Renderer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const rawOrder = localStorage.getItem('okio_last_order');
+            if (!rawOrder) {
+                // Default fallback if visited directly
+                document.getElementById('confirm-order-id').textContent = 'Order #OKIO-948201';
+                document.getElementById('confirm-address').innerHTML = `
+                    <strong>Akash Sharma</strong><br>
+                    Indie Tech Studio, 100ft Road, Indiranagar, Bengaluru - 560038<br>
+                    Payment Method: UPI
+                `;
+                document.getElementById('confirm-items-list').innerHTML = `
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                        <span>OKIO Focus & Flow (12-Pack)</span>
+                        <span>₹1,299</span>
+                    </div>
+                `;
+                document.getElementById('confirm-total-paid').textContent = '₹1,299';
+                return;
+            }
+
+            const order = JSON.parse(rawOrder);
+            document.getElementById('confirm-order-id').textContent = `Order #${order.orderId}`;
+            document.getElementById('confirm-address').innerHTML = `
+                <strong>${order.customer.name}</strong><br>
+                ${order.customer.address}<br>
+                Contact: ${order.customer.phone} • ${order.customer.email}<br>
+                Payment Method: ${order.paymentMethod}
+            `;
+
+            document.getElementById('confirm-items-list').innerHTML = order.items.map(item => `
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                    <span>${item.name} (${item.packLabel}) × ${item.qty}</span>
+                    <span>₹${(item.price * item.qty).toLocaleString('en-IN')}</span>
+                </div>
+            `).join('');
+
+            document.getElementById('confirm-total-paid').textContent = `₹${order.totals.total.toLocaleString('en-IN')}`;
+        });
+    </script>
+</body>
+</html>
