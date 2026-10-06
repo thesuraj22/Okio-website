@@ -1,658 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OKIO — A Better Way to Refresh | Modern Functional Beverage</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="OKIO is a modern Indian functional beverage built for people who want more from what they drink. Clean green tea caffeine, Argentine yerba mate, L-theanine, and cellular hydration.">
-    <meta name="keywords" content="OKIO, functional beverage, clean caffeine, yerba mate, L-theanine, energy drink India, modern wellness, nootropics, non-carbonated drink">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="OKIO — A Better Way to Refresh">
-    <meta property="og:description" content="A modern functional beverage built for people who want more from what they drink.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/okio_variety_pack.jpg">
-
-    <!-- Fonts: Syne, Outfit, Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#070707">
-
-    <!-- Design System Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Structured Data (JSON-LD) for Google Search Rich Results -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://drinkokio.com/#organization",
-          "name": "OKIO Beverages",
-          "url": "https://drinkokio.com",
-          "logo": "https://drinkokio.com/assets/okio_variety_pack.jpg",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "care@drinkokio.com",
-            "contactType": "Customer Support",
-            "areaServed": "IN"
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://drinkokio.com/#website",
-          "url": "https://drinkokio.com",
-          "name": "OKIO Functional Beverage",
-          "description": "A modern functional beverage built for people who want more from what they drink.",
-          "publisher": {
-            "@id": "https://drinkokio.com/#organization"
-          }
-        },
-        {
-          "@type": "Product",
-          "name": "OKIO Yerba Mate + Citrus",
-          "image": "https://drinkokio.com/assets/okio_can_yerba.jpg",
-          "description": "Clean green tea caffeine coupled with high-altitude yerba mate and cold-pressed lime. Sustained elevation with zero crash.",
-          "brand": {
-            "@type": "Brand",
-            "name": "OKIO"
-          },
-          "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "INR",
-            "lowPrice": "120",
-            "highPrice": "1299",
-            "offerCount": "4"
-          }
-        }
-      ]
-    }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OKIO — Functional refreshment, made different.</title>
+<meta name="description" content="OKIO is a modern functional beverage made for focus, movement and everyday energy.">
+<meta property="og:title" content="OKIO — Functional refreshment, made different.">
+<meta property="og:description" content="A cleaner, more considered way to refresh.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/okio_can.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/okio-v2.css">
 </head>
-<body>
+<body class="okio-v2">
 
-    <!-- Minimalist Loader (Section 28) -->
-    <div class="okio-loader" id="okio-loader">
-        <div class="loader-logo">okio</div>
-        <div class="loader-bar-track">
-            <div class="loader-bar-fill"></div>
-        </div>
+<header class="v2-nav">
+  <div class="v2-nav-inner">
+    <a class="v2-logo" href="index.html" aria-label="OKIO home">okio</a>
+    <nav class="v2-nav-links" aria-label="Primary navigation">
+      <a href="#product">The product</a>
+      <a href="#why">Why OKIO</a>
+      <a href="#story">Our story</a>
+    </nav>
+    <div class="v2-nav-actions">
+      <a class="v2-cart" href="shop.html">Shop</a>
+      <a class="v2-cta" href="shop.html">SHOP OKIO</a>
     </div>
+  </div>
+</header>
 
-    <!-- Header Navigation (Section 5 & 39) -->
-    <header class="main-header" id="main-header">
-        <div class="header-container">
-            <a href="index.html" class="brand-logo" aria-label="OKIO Home">okio</a>
-            
-            <nav class="desktop-nav" aria-label="Primary Navigation">
-                <a href="shop.html" class="nav-link">Shop</a>
-                <a href="why-okio.html" class="nav-link">Why OKIO</a>
-                <a href="about.html" class="nav-link">Our Story</a>
-                <a href="faq.html" class="nav-link">FAQ</a>
-            </nav>
-
-            <div class="header-actions">
-                <button class="header-icon-btn search-trigger" id="search-trigger" aria-label="Search Flavors & Ingredients">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </button>
-                <button class="cart-trigger" id="cart-trigger" aria-label="Open Cart Drawer">
-                    <span>Stash</span>
-                    <span class="cart-icon-wrapper">
-                        <svg class="cart-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
-                        <span class="cart-count-badge">0</span>
-                    </span>
-                </button>
-                <a href="shop.html" class="btn btn-primary header-cta-btn">SHOP OKIO</a>
-                <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
-                    <span class="menu-bar bar-top"></span>
-                    <span class="menu-bar bar-bottom"></span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Drawer Navigation -->
-    <div class="mobile-nav-drawer" id="mobile-nav">
-        <nav class="mobile-nav-links">
-            <a href="shop.html" class="mob-link">Shop All</a>
-            <a href="why-okio.html" class="mob-link">Why OKIO</a>
-            <a href="about.html" class="mob-link">Our Story</a>
-            <a href="faq.html" class="mob-link">FAQ</a>
-            <a href="contact.html" class="mob-link">Contact</a>
-        </nav>
-        <div class="mobile-nav-footer">
-            <p>A better way to refresh.</p>
-            <div class="mob-socials">
-                <a href="#" target="_blank" rel="noopener">Instagram</a>
-                <a href="#" target="_blank" rel="noopener">Twitter / X</a>
-            </div>
-        </div>
+<main>
+<section class="v2-hero">
+  <div class="v2-wrap v2-hero-grid">
+    <div>
+      <span class="v2-kicker">A new kind of functional drink</span>
+      <h1 class="v2-h1">REFRESH.<br><em>REFOCUS.</em><br>REPEAT.</h1>
+      <p class="v2-lead">OKIO is built for the moments that need more from your drink — without the visual noise, unnecessary complexity or old-school energy-drink aesthetic.</p>
+      <div class="v2-hero-actions">
+        <a class="v2-btn v2-btn-primary" href="shop.html">SHOP OKIO →</a>
+        <a class="v2-btn v2-btn-ghost" href="#product">SEE THE PRODUCT</a>
+      </div>
+      <p class="v2-price">Designed in India · Made for modern routines</p>
     </div>
+    <div class="v2-product-stage" aria-label="OKIO product">
+      <img class="v2-product-img" src="assets/okio_can.png" alt="OKIO beverage can">
+    </div>
+  </div>
+</section>
 
-    <!-- Main Content Flow -->
-    <main>
-        <!-- Hero Section (Section 6 & 7) -->
-        <section class="section-hero" id="hero">
-            <div class="hero-bg-glow"></div>
-            <div class="container hero-container">
-                <div class="hero-text-content">
-                    <div class="hero-badge">Next-Gen Functional Refreshment</div>
-                    <h1 class="hero-headline">A BETTER WAY<br>TO REFRESH.</h1>
-                    <p class="hero-subheadline">
-                        A modern functional beverage built for people who want more from what they drink. Clean green tea caffeine, Argentine yerba mate, and soothing L-theanine for sustained focus without the crash.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="shop.html" class="btn btn-primary" onclick="window.OKIO_ANALYTICS.track('hero_cta_click', { target: 'shop' })">SHOP OKIO</a>
-                        <a href="#what-is-okio" class="btn btn-secondary">DISCOVER OKIO</a>
-                    </div>
-                </div>
+<div class="v2-wrap">
+  <div class="v2-stats">
+    <div class="v2-stat"><strong>FUNCTIONAL</strong><span>Purpose before hype</span></div>
+    <div class="v2-stat"><strong>NON-CARBONATED</strong><span>A smoother drinking experience</span></div>
+    <div class="v2-stat"><strong>OKIO</strong><span>Made for the next routine</span></div>
+  </div>
+</div>
 
-                <div class="hero-visual-container">
-                    <div class="floating-can-wrapper" id="hero-can-wrapper">
-                        <img src="assets/okio_can.png" alt="OKIO Signature Functional Beverage Can" class="okio-can-img">
-                        <div class="can-shadow"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="v2-section" id="product">
+  <div class="v2-wrap v2-story-grid">
+    <div>
+      <span class="v2-eyebrow">01 / The product</span>
+      <h2 class="v2-section-title">THE DRINK SHOULD BE THE HERO.</h2>
+      <p class="v2-section-copy">We are building OKIO around a simple idea: a functional beverage should feel as considered as the rest of your daily kit. Clear purpose. Distinctive packaging. A taste you actually want to come back to.</p>
+      <div class="v2-principles">
+        <div class="v2-principle"><b>Purpose-led</b><p>Every element exists for a reason — from formulation to packaging.</p></div>
+        <div class="v2-principle"><b>Non-carbonated</b><p>A smooth format designed for drinking at work, training or on the move.</p></div>
+        <div class="v2-principle"><b>Less noise</b><p>No fluorescent energy-drink language. No overloaded visual system.</p></div>
+        <div class="v2-principle"><b>Built in India</b><p>A contemporary Indian beverage brand with global design ambition.</p></div>
+      </div>
+    </div>
+    <div class="v2-mango-panel">
+      <img src="assets/okio_can_yerba.jpg" alt="">
+      <div class="v2-mango-copy">
+        <span class="v2-eyebrow">The first impression</span>
+        <h3>LOOKS<br>LIKE OKIO.</h3>
+        <p>The product should be recognisable from across a room — without shouting for attention.</p>
+        <a class="v2-btn v2-btn-primary" href="shop.html">EXPLORE THE RANGE →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Signature Liquid Micro-Interaction Divider (Section 26) -->
-        <div class="liquid-divider">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" class="liquid-shape"></path>
-            </svg>
-        </div>
+<section class="v2-section" id="why">
+  <div class="v2-wrap">
+    <span class="v2-eyebrow">02 / Why OKIO</span>
+    <h2 class="v2-section-title">ENERGY WITHOUT THE OLD ENERGY-DRINK PLAYBOOK.</h2>
+    <p class="v2-section-copy">OKIO is deliberately different in tone and experience. Premium, calm and product-first — while still being a beverage you can reach for when your day demands more.</p>
+    <div class="v2-principles" style="margin-top:50px;grid-template-columns:repeat(4,1fr)">
+      <div class="v2-principle"><b>01</b><p>Clear positioning instead of a laundry list of benefits.</p></div>
+      <div class="v2-principle"><b>02</b><p>A premium visual language that can grow with the brand.</p></div>
+      <div class="v2-principle"><b>03</b><p>Mobile-first shopping with fewer distractions between discovery and purchase.</p></div>
+      <div class="v2-principle"><b>04</b><p>Claims that should earn their place through actual formulation and testing.</p></div>
+    </div>
+  </div>
+</section>
 
-        <!-- Section 8: "WHAT IS OKIO?" -->
-        <section class="section-statement" id="what-is-okio">
-            <div class="container statement-grid">
-                <div class="statement-text">
-                    <span class="section-tag accent">01 / The Paradigm</span>
-                    <h2 class="editorial-heading">NOT JUST ANOTHER<br>SOFT DRINK.</h2>
-                    <p class="highlight">
-                        We grew tired of choosing between chemical-laden energy drinks that leave you jittery and bloated, and bland wellness tonics that taste like lawn clippings.
-                    </p>
-                    <p>
-                        OKIO is functional science meets modern luxury. Crafted with 75mg of clean, organic plant caffeine, high-altitude yerba mate, calming L-theanine, and Himalayan trace minerals in a silky, non-carbonated pure spring water base.
-                    </p>
-                    <div class="statement-tags">
-                        <span class="statement-pill">75mg Clean Caffeine</span>
-                        <span class="statement-pill">100mg L-Theanine</span>
-                        <span class="statement-pill">Non-Carbonated</span>
-                        <span class="statement-pill">0g Added Sugar</span>
-                        <span class="statement-pill">Crafted in India</span>
-                    </div>
-                </div>
+<section class="v2-section" id="story">
+  <div class="v2-wrap v2-story-grid">
+    <div>
+      <span class="v2-eyebrow">03 / The idea</span>
+      <h2 class="v2-section-title">LESS SUGARCOATING.<br>MORE INTENTION.</h2>
+      <p class="v2-section-copy">The next generation of beverage brands shouldn't need to look louder to feel more exciting. OKIO is being built around restraint: a distinctive product, a clear reason to exist and an experience people remember.</p>
+    </div>
+    <div>
+      <span class="v2-eyebrow">Built for</span>
+      <h2 class="v2-section-title" style="font-size:clamp(2.4rem,4vw,4.2rem)">WORK.<br>MOVE.<br>CREATE.<br>REPEAT.</h2>
+    </div>
+  </div>
+</section>
 
-                <div class="statement-visual">
-                    <img src="assets/okio_can_yerba.jpg" alt="OKIO Yerba Mate and Citrus Can" class="statement-img">
-                </div>
-            </div>
-        </section>
+<section class="v2-final">
+  <div class="v2-wrap">
+    <span class="v2-eyebrow">04 / Your next drink</span>
+    <h2>MAKE YOUR ROUTINE<br>FEEL DIFFERENT.</h2>
+    <p>Discover the OKIO range and find the format that fits your day.</p>
+    <a class="v2-btn v2-btn-primary" href="shop.html">SHOP OKIO →</a>
+  </div>
+</section>
+</main>
 
-        <!-- Section 9 & 10: PRODUCT SHOWCASE ("MEET OKIO") -->
-        <section class="section-showcase-grid" id="meet-okio">
-            <div class="container">
-                <div class="section-header-row">
-                    <div>
-                        <span class="section-tag">02 / Signatures</span>
-                        <h2 class="section-title">MEET OKIO</h2>
-                    </div>
-                    <a href="shop.html" class="btn btn-secondary">VIEW ALL PACKS →</a>
-                </div>
+<footer class="v2-footer">
+  <div class="v2-wrap v2-footer-row">
+    <span>© 2026 OKIO Beverages India Private Limited.</span>
+    <span>Functional refreshment, made different.</span>
+  </div>
+</footer>
 
-                <div class="product-grid">
-                    <!-- Product 1: Yerba Mate + Citrus -->
-                    <div class="product-card" data-tilt>
-                        <span class="prod-badge-top" style="color: var(--accent-lime)">Best Seller</span>
-                        <a href="product.html?id=yerba-mate-citrus" class="prod-img-box">
-                            <img src="assets/okio_can_yerba.jpg" alt="OKIO Yerba Mate + Citrus Can" class="prod-img">
-                        </a>
-                        <span class="prod-flavor-label" style="color: var(--accent-lime)">Yerba Mate + Citrus</span>
-                        <h3 class="prod-title">OKIO Focus & Flow</h3>
-                        <p class="prod-desc">Clean green tea caffeine paired with Argentine yerba mate and crisp lime snap. Sustained elevation with zero jitter.</p>
-                        <div class="prod-bottom-row">
-                            <div class="prod-price-box">
-                                <span class="prod-price-label">From</span>
-                                <span class="prod-price">₹120 <small>/ can</small></span>
-                            </div>
-                            <div class="prod-card-actions">
-                                <button class="btn btn-secondary btn-card-add" data-quick-add="okio-yerba-mate-citrus">QUICK ADD</button>
-                                <button class="btn btn-primary btn-card-add" data-add-id="okio-yerba-mate-citrus" data-pack-id="pack-12" data-qty="1">ADD 12-PK</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 2: Hibiscus + Yuzu Berry -->
-                    <div class="product-card" data-tilt>
-                        <span class="prod-badge-top" style="color: var(--accent-rose)">Staff Pick</span>
-                        <a href="product.html?id=hibiscus-yuzu-berry" class="prod-img-box">
-                            <img src="assets/okio_can_hibiscus.jpg" alt="OKIO Hibiscus + Yuzu Berry Can" class="prod-img">
-                        </a>
-                        <span class="prod-flavor-label" style="color: var(--accent-rose)">Hibiscus + Yuzu Berry</span>
-                        <h3 class="prod-title">OKIO Antioxidant & Clarity</h3>
-                        <p class="prod-desc">Whole brewed mountain hibiscus paired with tart Japanese yuzu and wild berries. Deep floral finish with gentle mental lift.</p>
-                        <div class="prod-bottom-row">
-                            <div class="prod-price-box">
-                                <span class="prod-price-label">From</span>
-                                <span class="prod-price">₹120 <small>/ can</small></span>
-                            </div>
-                            <div class="prod-card-actions">
-                                <button class="btn btn-secondary btn-card-add" data-quick-add="okio-hibiscus-yuzu-berry">QUICK ADD</button>
-                                <button class="btn btn-primary btn-card-add" data-add-id="okio-hibiscus-yuzu-berry" data-pack-id="pack-12" data-qty="1">ADD 12-PK</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 3: Ginger + White Peach -->
-                    <div class="product-card" data-tilt>
-                        <span class="prod-badge-top" style="color: var(--accent-amber)">New Drop</span>
-                        <a href="product.html?id=ginger-white-peach" class="prod-img-box">
-                            <img src="assets/okio_can_peach.jpg" alt="OKIO Ginger + White Peach Can" class="prod-img">
-                        </a>
-                        <span class="prod-flavor-label" style="color: var(--accent-amber)">Ginger + White Peach</span>
-                        <h3 class="prod-title">OKIO Gut Harmony & Energy</h3>
-                        <p class="prod-desc">Cold-pressed young ginger root blended with velvety white peach puree. Warming spicy kick with soothing fruit undertones.</p>
-                        <div class="prod-bottom-row">
-                            <div class="prod-price-box">
-                                <span class="prod-price-label">From</span>
-                                <span class="prod-price">₹120 <small>/ can</small></span>
-                            </div>
-                            <div class="prod-card-actions">
-                                <button class="btn btn-secondary btn-card-add" data-quick-add="okio-ginger-white-peach">QUICK ADD</button>
-                                <button class="btn btn-primary btn-card-add" data-add-id="okio-ginger-white-peach" data-pack-id="pack-12" data-qty="1">ADD 12-PK</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Featured Variety Stash Bundle -->
-                <div class="product-grid bundle-grid">
-                    <div class="product-card" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding: 40px;">
-                        <a href="product.html?id=variety-pack" class="prod-img-box" style="margin-bottom: 0; aspect-ratio: 16/10;">
-                            <img src="assets/okio_variety_pack.jpg" alt="OKIO Discovery Stash 12-Pack" class="prod-img">
-                        </a>
-                        <div>
-                            <span class="prod-badge-top" style="position: static; margin-bottom: 14px; display: inline-block;">VIP COLLECTOR PACK</span>
-                            <span class="prod-flavor-label" style="color: var(--accent-silver)">All 3 Signatures • 12 Cans Total</span>
-                            <h3 class="prod-title" style="font-size: 2rem;">The Discovery Variety Pack</h3>
-                            <p class="prod-desc" style="font-size: 1rem; margin-bottom: 24px;">
-                                Experience the full OKIO spectrum. 4 cans each of Yerba Mate + Citrus, Hibiscus + Yuzu Berry, and Ginger + White Peach in custom matte studio packaging.
-                            </p>
-                            <div class="prod-bottom-row" style="border-top: none; padding-top: 0;">
-                                <div class="prod-price-box">
-                                    <span class="prod-price-label">Complete 12-Pack</span>
-                                    <span class="prod-price" style="font-size: 1.6rem;">₹1,349</span>
-                                </div>
-                                <div class="prod-card-actions">
-                                    <a href="product.html?id=variety-pack" class="btn btn-secondary">DETAILS</a>
-                                    <button class="btn btn-primary" data-add-id="okio-discovery-variety-pack" data-pack-id="pack-12" data-qty="1">ADD STASH</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 11 & 12: INGREDIENT STORY ("THE BOTANICAL MATRIX") -->
-        <section class="section-ingredients" id="ingredients">
-            <div class="container">
-                <span class="section-tag">03 / Bioactive Matrix</span>
-                <h2 class="section-title">ACTIVE INGREDIENTS.<br>NO GIMMICKS.</h2>
-                <p style="color: var(--text-muted); max-width: 580px; margin-top: 12px;">
-                    We rely on proven botanicals with documented physiological mechanisms. Tap any card below to inspect its extraction profile.
-                </p>
-
-                <div class="ingredients-grid">
-                    <!-- Card 1 -->
-                    <div class="ingredient-card active">
-                        <div class="ing-img-wrap">
-                            <img src="assets/ingredient_yerba_mate.jpg" alt="Argentine Yerba Mate Leaves">
-                        </div>
-                        <span class="ing-tag">Shade Grown</span>
-                        <h3 class="ing-title">Argentine Yerba Mate</h3>
-                        <p class="ing-desc">Packed with theobromine and polyphenols, yielding a soft, elongated energetic lift without heart palpitations.</p>
-                        <div class="ing-stat-pill">
-                            <span>Sustained Energy</span>
-                            <span class="ing-stat-val">4h Curve</span>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="ingredient-card">
-                        <div class="ing-img-wrap">
-                            <img src="assets/ingredient_citrus.jpg" alt="Cold Pressed Fresh Citrus">
-                        </div>
-                        <span class="ing-tag">Cold Pressed</span>
-                        <h3 class="ing-title">Citrus & Yuzu Oils</h3>
-                        <p class="ing-desc">Unheated citrus oils and yuzu fruit concentrate provide authentic aromatic brightness that cuts through afternoon fog.</p>
-                        <div class="ing-stat-pill">
-                            <span>Real Fruit</span>
-                            <span class="ing-stat-val">100% Raw</span>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="ingredient-card">
-                        <div class="ing-img-wrap">
-                            <img src="assets/okio_can.png" alt="Clean Green Tea Caffeine">
-                        </div>
-                        <span class="ing-tag">Natural Origin</span>
-                        <h3 class="ing-title">Green Tea Caffeine</h3>
-                        <p class="ing-desc">Standardized to precisely 75mg. Enters cellular receptors gradually, preventing the sharp drop of synthetic soda caffeine.</p>
-                        <div class="ing-stat-pill">
-                            <span>Measured Dose</span>
-                            <span class="ing-stat-val">75mg Lift</span>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="ingredient-card">
-                        <div class="ing-img-wrap">
-                            <img src="assets/lifestyle_focus.png" alt="L Theanine Alpha Nootropic">
-                        </div>
-                        <span class="ing-tag">Synergistic Buffer</span>
-                        <h3 class="ing-title">L-Theanine Nootropic</h3>
-                        <p class="ing-desc">An organic amino acid that induces alpha wave frequency in the brain, fostering calm clarity and steady hands.</p>
-                        <div class="ing-stat-pill">
-                            <span>Calm Acuity</span>
-                            <span class="ing-stat-val">100mg Pure</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 13: "WHY OKIO?" COMPARISON -->
-        <section class="section-why" id="why-okio">
-            <div class="container">
-                <span class="section-tag accent">04 / The Distinction</span>
-                <h2 class="section-title">WHY OKIO?</h2>
-                <p style="color: var(--text-muted); max-width: 540px; margin-top: 12px;">
-                    Modern humans deserve a drink engineered for sustained output rather than artificial hyper-stimulation.
-                </p>
-
-                <div class="comparison-table-wrap">
-                    <div class="comp-header-row">
-                        <span>Metric</span>
-                        <span class="comp-header-okio">OKIO Standard</span>
-                        <span class="comp-header-legacy">Legacy Energy Drinks</span>
-                    </div>
-                    <div class="comp-row">
-                        <span class="comp-category">Energy Curve</span>
-                        <span class="comp-okio-cell">75mg green tea caffeine + 100mg L-Theanine for smooth 4-hour elevation</span>
-                        <span class="comp-legacy-cell">160mg+ synthetic caffeine spike followed by a severe afternoon crash</span>
-                    </div>
-                    <div class="comp-row">
-                        <span class="comp-category">Carbonation</span>
-                        <span class="comp-okio-cell">Zero carbonation. Smooth spring water base, no gas, zero bloating</span>
-                        <span class="comp-legacy-cell">Aggressive carbonation causing immediate stomach bloating</span>
-                    </div>
-                    <div class="comp-row">
-                        <span class="comp-category">Sweetener & Sugar</span>
-                        <span class="comp-okio-cell">0g added cane sugar. Real fruit splash (15-18 kcal only)</span>
-                        <span class="comp-legacy-cell">28g to 45g high-fructose corn syrup or sucralose chemical taste</span>
-                    </div>
-                    <div class="comp-row">
-                        <span class="comp-category">Usability</span>
-                        <span class="comp-okio-cell">Calm concentration ideal for founders, creators, athletes & night writers</span>
-                        <span class="comp-legacy-cell">Hyperactive restlessness, jitters, and elevated heart rate</span>
-                    </div>
-                    <div class="comp-row">
-                        <span class="comp-category">Aesthetic</span>
-                        <span class="comp-okio-cell">Understated matte charcoal, studio lighting, modern Indian relevance</span>
-                        <span class="comp-legacy-cell">Loud esports graffiti, neon cartoon branding, discount cans</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 14 & 15: LIFESTYLE SECTION ("WHEN WOULD I DRINK OKIO?") -->
-        <section class="section-lifestyle" id="lifestyle">
-            <div class="container">
-                <span class="section-tag">05 / Everyday Context</span>
-                <h2 class="section-title">BUILT FOR REAL ROUTINES.</h2>
-                <p style="color: var(--text-muted); max-width: 540px; margin-top: 12px;">
-                    Whether tackling intense codebases in Bengaluru or heading to morning workouts in Mumbai.
-                </p>
-
-                <div class="lifestyle-grid">
-                    <!-- Moment 1 -->
-                    <div class="lifestyle-card">
-                        <div class="lifestyle-img-wrap">
-                            <img src="assets/okio_can_yerba.jpg" alt="OKIO Morning Commute in Mumbai">
-                            <span class="lifestyle-badge">08:30 AM</span>
-                        </div>
-                        <div class="lifestyle-content">
-                            <h3 class="lifestyle-title">Urban Commute</h3>
-                            <span class="lifestyle-location">Mumbai Transit</span>
-                            <p class="lifestyle-desc">Step into the morning rush with clean cognitive clarity and cellular hydration before your first standup.</p>
-                        </div>
-                    </div>
-
-                    <!-- Moment 2 -->
-                    <div class="lifestyle-card">
-                        <div class="lifestyle-img-wrap">
-                            <img src="assets/lifestyle_focus.png" alt="OKIO Deep Work Studio in Bengaluru">
-                            <span class="lifestyle-badge">02:15 PM</span>
-                        </div>
-                        <div class="lifestyle-content">
-                            <h3 class="lifestyle-title">Deep Work Studio</h3>
-                            <span class="lifestyle-location">Bengaluru Tech Hub</span>
-                            <p class="lifestyle-desc">Bypass the post-lunch slump. L-Theanine keeps your brain operating in calm, steady alpha wave focus.</p>
-                        </div>
-                    </div>
-
-                    <!-- Moment 3 -->
-                    <div class="lifestyle-card">
-                        <div class="lifestyle-img-wrap">
-                            <img src="assets/lifestyle_gym.png" alt="OKIO Movement and Athletic Training">
-                            <span class="lifestyle-badge">06:00 PM</span>
-                        </div>
-                        <div class="lifestyle-content">
-                            <h3 class="lifestyle-title">Movement & Gym</h3>
-                            <span class="lifestyle-location">Indiranagar Athletic</span>
-                            <p class="lifestyle-desc">Pure non-carbonated hydration and Himalayan trace minerals for immediate cellular absorption during sets.</p>
-                        </div>
-                    </div>
-
-                    <!-- Moment 4 -->
-                    <div class="lifestyle-card">
-                        <div class="lifestyle-img-wrap">
-                            <img src="assets/okio_variety_pack.jpg" alt="OKIO Social Evening in Bandra">
-                            <span class="lifestyle-badge">08:30 PM</span>
-                        </div>
-                        <div class="lifestyle-content">
-                            <h3 class="lifestyle-title">Evening & Social</h3>
-                            <span class="lifestyle-location">Bandra Rooftop</span>
-                            <p class="lifestyle-desc">An intelligent, sophisticated alternative to alcohol or sugary soda with complex tart botanical finishes.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 16: BRAND STORY ("BUILT FOR THE NEXT GENERATION") -->
-        <section class="section-story" id="story">
-            <div class="container story-layout">
-                <div class="story-visual-wrap">
-                    <img src="assets/lifestyle_focus.png" alt="OKIO Brand Story Manifesto">
-                </div>
-                <div class="story-narrative">
-                    <span class="section-tag accent">06 / Our Manifesto</span>
-                    <h2>BUILT FOR THE NEXT GENERATION OF DRINKERS.</h2>
-                    <p>
-                        We founded OKIO in India with a single conviction: the drinks industry was stuck in the past century. You either had 1980s sugary sodas with aggressive carbonation, or antiquated formulas masquerading as wellness.
-                    </p>
-                    <p>
-                        We wanted a drink that felt at home next to our laptops, in our gym bags, and on our dinner tables. Designed with world-class minimalist aesthetics, authentic botanical sourcing, and clinically balanced caffeine.
-                    </p>
-                    <div class="story-stats-row">
-                        <div>
-                            <div class="story-stat-num">75mg</div>
-                            <div class="story-stat-label">Organic Caffeine</div>
-                        </div>
-                        <div>
-                            <div class="story-stat-num">0g</div>
-                            <div class="story-stat-label">Added Cane Sugar</div>
-                        </div>
-                        <div>
-                            <div class="story-stat-num">100%</div>
-                            <div class="story-stat-label">Non-Carbonated</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 17: SOCIAL PROOF ("WHAT PEOPLE ARE SAYING") -->
-        <section class="section-social-proof">
-            <div class="container">
-                <span class="section-tag">07 / Community Reception</span>
-                <h2 class="section-title">WHAT PEOPLE ARE SAYING</h2>
-
-                <div class="reviews-grid">
-                    <div class="review-card">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-quote">"OKIO delivers an almost meditative state of alertness. Zero chest tightness, zero jitters, and the yuzu berry flavor is extraordinary."</p>
-                        <div class="reviewer-meta">
-                            <span class="reviewer-name">Karan M.</span>
-                            <span class="reviewer-role">Product Architect • Bengaluru</span>
-                        </div>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-quote">"The fact that it is completely non-carbonated is a game-changer. I drink it 20 minutes before afternoon training and feel clean energy without burping or acid."</p>
-                        <div class="reviewer-meta">
-                            <span class="reviewer-name">Ananya S.</span>
-                            <span class="reviewer-role">Fitness Coach • Mumbai</span>
-                        </div>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-quote">"Finally, a beverage brand from India that doesn't look like an ayurvedic cough syrup or a cheap gaming soda. The matte cans look stunning on my studio desk."</p>
-                        <div class="reviewer-meta">
-                            <span class="reviewer-name">Rohan D.</span>
-                            <span class="reviewer-role">Creative Director • Delhi</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Community Strip -->
-                <div class="community-strip">
-                    <div class="community-header">
-                        <span style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">From the Community • #DrinkOKIO</span>
-                        <a href="https://instagram.com" target="_blank" rel="noopener" style="color: var(--text-white); font-size: 0.82rem; text-decoration: none;">@drinkokio on Instagram →</a>
-                    </div>
-                    <div class="community-grid">
-                        <div class="community-item"><img src="assets/okio_can_yerba.jpg" alt="Community OKIO Yerba Mate"></div>
-                        <div class="community-item"><img src="assets/lifestyle_focus.png" alt="Community OKIO Studio Focus"></div>
-                        <div class="community-item"><img src="assets/okio_can_hibiscus.jpg" alt="Community OKIO Hibiscus Yuzu"></div>
-                        <div class="community-item"><img src="assets/lifestyle_gym.png" alt="Community OKIO Movement"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 47: SIGNATURE BRAND VISUAL MOMENT -->
-        <section class="section-brand-moment">
-            <div class="container">
-                <div class="moment-typography">
-                    <div class="moment-line">DRINK DIFFERENT.</div>
-                    <div class="moment-line highlight">THINK DIFFERENT.</div>
-                    <div class="moment-line accent">BE OKIO.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 48: FINAL CTA -->
-        <section class="section-final-cta">
-            <div class="container">
-                <div class="cta-box">
-                    <span class="section-tag accent">Ready to Upgrade?</span>
-                    <h2 class="cta-headline">READY TO TRY OKIO?</h2>
-                    <p class="cta-subtext">Free express shipping on all orders over ₹999 across India. 100% satisfaction guarantee.</p>
-                    <div class="cta-actions">
-                        <a href="shop.html" class="btn btn-primary">SHOP OKIO</a>
-                        <a href="product.html?id=variety-pack" class="btn btn-secondary">EXPLORE THE RANGE</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Section 40 & 41: MINIMAL FOOTER & NEWSLETTER -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <a href="index.html" class="brand-logo">okio</a>
-                    <p>A modern functional beverage crafted in India. Built for cognitive clarity, clean energy, and everyday ritual.</p>
-                </div>
-                <div class="footer-col">
-                    <h5>Shop</h5>
-                    <ul class="footer-links">
-                        <li><a href="shop.html">All Products</a></li>
-                        <li><a href="product.html?id=yerba-mate-citrus">Yerba Mate + Citrus</a></li>
-                        <li><a href="product.html?id=hibiscus-yuzu-berry">Hibiscus + Yuzu</a></li>
-                        <li><a href="product.html?id=ginger-white-peach">Ginger + Peach</a></li>
-                        <li><a href="product.html?id=variety-pack">Discovery Stash</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h5>Brand</h5>
-                    <ul class="footer-links">
-                        <li><a href="why-okio.html">Why OKIO</a></li>
-                        <li><a href="about.html">Our Story</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h5>Legal</h5>
-                    <ul class="footer-links">
-                        <li><a href="faq.html">Shipping Policy</a></li>
-                        <li><a href="faq.html">Returns & Refunds</a></li>
-                        <li><a href="faq.html">Privacy Policy</a></li>
-                        <li><a href="faq.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h5>STAY IN THE LOOP.</h5>
-                    <p>New drops, new flavors, and everything OKIO.</p>
-                    <form class="newsletter-form" id="footer-newsletter-form">
-                        <input type="email" placeholder="Enter your email..." required>
-                        <button type="submit" class="btn btn-primary" style="padding: 10px;">JOIN OKIO</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 OKIO Beverages India Private Limited. All rights reserved.</p>
-                <p>Designed for focus & flow.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- OKIO Data & Store Engine Scripts -->
-    <script src="js/okio-data.js"></script>
-    <script src="js/okio-store.js"></script>
-    <script src="js/main.js"></script>
+<script src="js/okio-data.js"></script>
+<script src="js/okio-store.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
